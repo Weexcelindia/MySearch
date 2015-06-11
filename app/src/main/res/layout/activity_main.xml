@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar_actionbar"
+        layout="@layout/toolbar_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/myOpacityColor"
+        android:layout_below="@+id/toolbar_actionbar">
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:clickable="false"
+
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_margin="10dp"
+                android:weightSum="90"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:id="@+id/linear_origindailog"
+                    android:layout_weight="5"
+
+                    android:layout_height="0dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="ORIGIN"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        android:textColor="@color/myTextPrimaryColor"
+                        android:id="@+id/textView2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="45"
+                    android:background="@drawable/rect_shadow"
+                    android:layout_height="0dp">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:weightSum="100"
+
+                        android:layout_marginTop="20dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/navigationAll_Image"
+                            android:layout_weight="20"
+                            android:layout_gravity="center"
+                            android:src="@drawable/navigation_icon"
+                            android:id="@+id/imageView" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="@string/origin"
+                            android:layout_weight="60"
+                            android:textSize="14sp"
+
+                            android:layout_marginLeft="8dp"
+                            android:textColor="@color/myorigintextColor"
+                            android:id="@+id/textView_origincity"
+                            android:gravity="center|start" />
+
+                        <EditText
+                            android:id="@+id/search"
+                            android:layout_width="0dp"
+                            android:layout_weight="60"
+                            android:visibility="gone"
+                            android:textColor="#000000"
+                            android:layout_height="match_parent">
+
+                            <requestFocus />
+                        </EditText>
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/navigation_Image"
+                            android:layout_weight="20"
+                            android:src="@drawable/navigator"
+                            android:id="@+id/imageView_navigation" />
+                    </LinearLayout>
+
+                    <ListView
+                        android:id="@+id/listview"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:visibility="gone"
+                        android:layout_below="@+id/search" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:weightSum="100"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginRight="9dp"
+                        android:id="@+id/line_layout">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="80"
+                            android:visibility="invisible"
+                            android:background="@android:color/darker_gray" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="20"
+
+                            android:background="@android:color/darker_gray" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:weightSum="85"
+                        android:layout_marginTop="20dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/navigationAll_Image"
+                            android:layout_weight="17"
+                            android:layout_gravity="center"
+                            android:src="@drawable/cal_icon"
+                            android:id="@+id/imageVie1" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="@string/origin_date"
+                            android:layout_weight="68"
+                            android:textColor="@color/myorigintextColor"
+                            android:layout_marginLeft="8dp"
+                            android:textSize="14sp"
+                            android:id="@+id/textView_origindate"
+                            android:gravity="center|start" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:weightSum="100"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginRight="9dp"
+                        android:id="@+id/line_layhout">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="80"
+                            android:visibility="invisible"
+                            android:background="@android:color/darker_gray" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="20"
+
+                            android:background="@android:color/darker_gray" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:weightSum="75"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/navigation_Image"
+                            android:layout_weight="15"
+                            android:layout_marginLeft="4dp"
+                            android:src="@drawable/navigation_marker"
+                            android:visibility="invisible"
+                            android:id="@+id/imagfeVi1e1eVi1e1" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/origin_distance"
+                            android:layout_weight="60"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="8dp"
+                            android:textColor="@color/myorigintextColor"
+                            android:id="@+id/textVi1ew1"
+                            android:gravity="center|start" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:weightSum="70"
+
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="@dimen/navigationAll_Image"
+                            android:layout_height="@dimen/navigationAll_Image"
+                            android:layout_weight="7"
+                            android:layout_marginLeft="4dp"
+                            android:src="@drawable/navigation_marker"
+                            android:id="@+id/imageVi1e1" />
+
+                        <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+                            android:layout_width="0dp"
+                            android:layout_height="10dp"
+                            android:layout_weight="63"
+                            app:dsb_progressColor="@color/selected_line"
+                            app:dsb_rippleColor="#ffffff"
+                            app:dsb_indicatorColor="@color/selected_bubble"
+                            app:dsb_min="2"
+                            app:dsb_max="15" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:id="@+id/linear_origindaailog"
+                    android:layout_weight="5"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="0dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="DESTINATION(OPTIONAL)"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        android:textColor="@color/myTextPrimaryColor"
+                        android:id="@+id/textVaiew2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="30"
+                    android:background="@drawable/rect_shadow"
+                    android:layout_height="0dp">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:weightSum="100"
+
+                        android:layout_marginTop="20dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="@dimen/navigationAll_Image"
+                            android:layout_height="@dimen/navigationAll_Image"
+                            android:layout_weight="20"
+                            android:layout_gravity="center"
+                            android:src="@drawable/navigation_icon"
+                            android:id="@+id/image4View" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/destination"
+                            android:layout_weight="60"
+                            android:textSize="14sp"
+
+                            android:layout_marginLeft="8dp"
+                            android:textColor="@color/myorigintextColor"
+                            android:id="@+id/textview_destination"
+                            android:gravity="center|start" />
+
+                        <EditText
+                            android:id="@+id/searchdest"
+                            android:layout_width="0dp"
+                            android:layout_weight="60"
+                            android:visibility="gone"
+                            android:textColor="#000000"
+                            android:layout_height="match_parent">
+
+                            <requestFocus />
+                        </EditText>
+                    </LinearLayout>
+
+                    <ListView
+                        android:id="@+id/listview_dest"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:visibility="gone"
+                        android:layout_below="@+id/search" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:weightSum="100"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginRight="9dp"
+                        android:id="@+id/linte_layhoute_layhout">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="80"
+                            android:visibility="invisible"
+                            android:background="@android:color/darker_gray" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="20"
+
+                            android:background="@android:color/darker_gray" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:weightSum="100"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="@dimen/navigationAll_Image"
+                            android:layout_height="@dimen/navigationAll_Image"
+                            android:layout_weight="20"
+                            android:layout_marginLeft="4dp"
+                            android:visibility="invisible"
+                            android:src="@drawable/navigation_marker"
+                            android:id="@+id/imageVi21e1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="@string/destination_distance"
+                            android:layout_weight="70"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="8dp"
+                            android:textColor="@color/myorigintextColor"
+                            android:id="@+id/textVi11ew1"
+                            android:gravity="center|start" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:weightSum="70"
+
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="@dimen/navigationAll_Image"
+                            android:layout_height="@dimen/navigationAll_Image"
+                            android:layout_weight="7"
+                            android:layout_marginLeft="4dp"
+                            android:src="@drawable/navigation_marker"
+                            android:id="@+id/igmageVi1e1mageVi1e1" />
+
+                        <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="63"
+                            app:dsb_progressColor="@color/selected_line"
+                            app:dsb_rippleColor="#00000000"
+                            app:dsb_indicatorColor="@color/selected_bubble"
+                            app:dsb_min="2"
+
+                            app:dsb_max="15" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <!-- android:layout_marginTop="?android:attr/actionBarSize"-->
+        <fragment
+            android:id="@+id/fragment_drawer"
+            android:name="com.poliveira.apps.materialtests.NavigationDrawerFragment"
+            android:layout_width="@dimen/navigation_drawer_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:layout="@layout/fragment_navigation_drawer" />
+    </android.support.v4.widget.DrawerLayout>
+</RelativeLayout>
